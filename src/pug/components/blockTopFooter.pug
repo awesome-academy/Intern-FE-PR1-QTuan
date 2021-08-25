@@ -1,0 +1,22 @@
+mixin itemHeadingFooter(content)
+  h3 
+    span(class="top-footer__icon")
+      i(class="fas fa-border-all")
+    span=content
+
+mixin itemLinkFooter(content, items, icon, isSocial)
+  ul(class=`block__list-info list-unstyled mb-0 ${isSocial ? 'block__socials' : " "}`)
+    each link in items.links
+      li(class="my-2 list-info__item")
+        if isSocial
+          a(href="#!" class="text-decoration-none") 
+            i(class=link.icon)
+            span=link.text
+        else
+          a(href="#!" class="text-decoration-none")=link
+
+mixin blockTopFooter()
+  each item in footerNav 
+    div(class=`${item.isAbout ? "col-xl-4" : "col-xl-2"} col-lg-4 col-md-6 top-footer__block`)
+      +itemHeadingFooter(item.heading)
+      +itemLinkFooter(item.title, item, item.icon, item.isSocial)

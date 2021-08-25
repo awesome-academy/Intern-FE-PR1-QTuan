@@ -1,0 +1,23 @@
+footer(id="footer")
+  div(class="container")
+    section(class="top-footer")
+      .row 
+        +blockTopFooter()
+    section(class="bottom-footer")
+      .row
+        div(class="col-lg-6 bottom-footer__block")
+          p Thanh toán:
+          .row 
+            each val in arrBankImages.length ? arrBankImages : ['No']
+              +bankItem(`../images/${val}`)
+        div(class="col-lg-6 bottom-footer__block")
+          p Giải đáp nhanh:
+          .row 
+            +contactItem(
+              "fas fa-phone",
+              "Tư vấn miễn phí (24/7)",
+              "1900 650 650")
+            +contactItem(
+              "fas fa-comment",
+              "Góp ý-phản hồi-thắc mắc",
+              "1900 650 650")
