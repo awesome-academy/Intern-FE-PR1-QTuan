@@ -1,0 +1,30 @@
+extends ../layouts/default-layout
+
+block vars
+	-title = 'Đăng nhập'
+	-bodyClass = 'login-page'
+	-des=''
+
+block content
+	section(class="section-login")
+		.container 
+			+breadcrumb("Trang chủ","Đăng nhập")
+			form(class="login-form")
+				.row 
+					div(class="col-lg-6")
+						h3 Thông tin đăng nhập
+						+inputForm("name", "Họ và tên :", "text")
+						+inputForm("password", "Mật khẩu :", "password")
+						div(class="login-form__check d-flex justify-content-between ")
+							div
+								input(type="checkbox" id="check-remember")
+								label(for="check-remember")  Ghi nhớ đăng nhập
+							a(class="login-form__forgot") Bạn quên mật khẩu ?
+						div( class="login-form__btn")
+							+btn("Đăng nhập" ,"login.html")
+					div(class="col-lg-6")
+						div(class="login-form__help") 
+							h3 Bạn chưa có tài khoản 
+							p Đăng ký tài khoản để mua hàng nhanh hơn. Theo dõi đơn đặt hàng, vận chuyển. Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tôi.
+							div(class="login-form__btn")
+								+btn("Đăng ký", "register.html")

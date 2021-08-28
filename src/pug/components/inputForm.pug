@@ -1,0 +1,5 @@
+mixin inputForm(name, label, type, isRegister=false)
+  div(class=`${isRegister ? "col-lg-6" : ""}`)
+    div(class="input-label")
+        label(for=name)=label
+    input(class="form-control input-text" type=type id=name name=name)

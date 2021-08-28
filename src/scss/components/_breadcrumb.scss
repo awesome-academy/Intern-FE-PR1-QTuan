@@ -1,0 +1,17 @@
+.breadcrumb {
+
+  &-item {
+    font-size: 1.3rem;
+    color: $text-gray;
+    font-family: $secondary-font;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-color;
+    }
+  }
+
+  &-item:last-child {
+    color: $title-color;
+  }
+}

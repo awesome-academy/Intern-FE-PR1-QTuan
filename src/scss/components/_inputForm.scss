@@ -1,0 +1,20 @@
+.input-label {
+  padding: 24px 0;
+  font-size: 1.4rem;
+  width: 80%;
+
+  @include TabletAndMobile {
+    width: 100%;
+  }
+}
+
+.input-text {
+  font-size: 1.4rem;
+  height: 50px;
+  width: 85%;
+  box-shadow: none !important;
+
+  @include TabletAndMobile {
+    width: 100%;
+  }
+}
