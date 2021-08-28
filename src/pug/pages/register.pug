@@ -1,0 +1,31 @@
+extends ../layouts/default-layout
+
+block vars
+	-title = 'Đăng ký'
+	-bodyClass = 'login-page'
+	-des=''
+
+block content
+	section(class="section-register")
+		.container 
+			+breadcrumb("Trang chủ","Đăng ký")
+			form(class="register-form")
+				h3 Thông tin cá nhân 
+				.row
+					+inputForm("name","Họ và tên: ", "text", true)
+					+inputForm("email","Email: ", "text", true)
+				.row 
+					+inputForm("text","Số điện thoại: ", "text", true)
+					+inputForm("text","Địa chỉ: ", "text", true)
+				.register-form__check
+					input(type="checkbox" id="check-news")
+					label(for="check-news")  Đăng kí nhận tin tức qua email
+				h3 Thông tin đăng nhập 
+				.row 
+					+inputForm("name","Họ và tên: ", "text", true)
+					+inputForm("email","Email: ", "text", true)
+				.row
+					div(class="register-form__btn-back col-lg-2 col-6")
+						+btn("Quay lại","index.html")
+					div(class="register-form__btn col-lg-10 col-6")
+						+btn("Đăng ký")

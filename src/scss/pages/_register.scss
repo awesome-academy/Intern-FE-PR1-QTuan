@@ -1,0 +1,40 @@
+.section-register {
+  padding: 30px 0 40px 0;
+
+  .register-form {
+    padding: 10px 0;
+
+    h3 {
+      padding: 20px 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &__check {
+      padding: 24px 0;
+      font-size: 1.3rem;
+      color: $text-gray;
+
+      label {
+        padding-left: 10px;
+        font-style: italic;
+      }
+    }
+    
+    &__btn-back , &__btn {
+      margin-top: 40px;
+    }
+
+    &__btn {
+      
+      .button--link {
+        background-color: $primary-color;
+        
+        &:hover {
+          background-color: rgba($primary-color, 0.8);
+        }
+      }
+    }
+  }
+}
