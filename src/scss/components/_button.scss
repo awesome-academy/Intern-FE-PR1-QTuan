@@ -1,0 +1,13 @@
+.button--link {
+  padding: 12px 12px;
+  background-color: $secondary-color;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: $white-color;
+  transition: all ease .3s;
+  
+  &:hover {
+    color: $white-color;
+    background-color: rgba($secondary-color,0.8);
+  }
+}
