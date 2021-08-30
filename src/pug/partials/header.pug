@@ -1,0 +1,55 @@
+
+header(id="header")
+  section.top-header 
+    div(class= "container wrapper-content d-flex justify-content-between align-items-center h-100")
+      div(class="top-header__socials h-100 d-flex ")
+        each val in arrIcons.length ? arrIcons : ['No']
+          a(class="btn__header")
+            i(class=val)
+      div(class="top-header__button d-flex h-100")
+        div(class='btn__toolbox h-100 d-flex align-items-center')
+          a(href="#") Đăng ký
+        div(class="btn__toolbox h-100 d-flex align-items-center")
+          a(href="#") Đăng nhập
+
+  section.middle-header 
+    div(class="container wrapper-content d-flex justify-content-between align-items-center h-100")
+      section(class="middle-header__logo h-100")
+        a(href="index.html")
+          img(src="../images/logo.png" alt="thanh-cong") 
+      section(class="middle-header__toolbox d-flex justify-content-between align-items-center h-100")
+        ul(class="toolbox__tel d-flex justify-content-between align-items-center h-100")
+          +itemTelToolBox("Hotline", "(08) 90045 9600 ")
+          +itemTelToolBox("Đặt hàng nhanh", "(08) 90045 4332")
+        div(class="toolbox__search")
+          input(type="text" placeholder="Tìm kiếm...")
+          a(href="#")
+            i(class="fas fa-search")
+
+  section.nav-header
+    div(class="container wrapper-content d-flex justify-content-between align-items-center navbar h-100")
+      label(for="navbar__bars--input" class="mobile__toggle") 
+        i(class="fas fa-bars")
+      nav(class="navbar__pc")
+        ul(class="navbar__list d-flex h-100")
+          +navbarItem("index.html", "Trang chủ")
+          +navbarItem("index.html", "Giới thiệu")
+          +navbarItem("index.html", "Sản phẩm")
+          +navbarItem("index.html", "Tin khuyến mãi")
+          +navbarItem("index.html", "Dịch vụ")
+          +navbarItem("index.html", "Liên hệ")
+      input(type="checkbox" name="" hidden class="navbar__bars--input" id="navbar__bars--input")
+      label(class="navbar__overlay" for="navbar__bars--input")
+      nav(class="navbar__mobile")
+        label(class="fas fa-times navbar__icon-close" for="navbar__bars--input")
+        ul(class="navbar__list--mobile")
+          +navbarItem("index.html", "Trang chủ")
+          +navbarItem("index.html", "Giới thiệu")
+          +navbarItem("index.html", "Sản phẩm")
+          +navbarItem("index.html", "Tim khuyến mãi")
+          +navbarItem("index.html", "Dịch vụ")
+          +navbarItem("index.html", "Liên hệ")
+      div(class="navbar__toolbox")
+        a(href="")
+          i(class="fas fa-shopping-cart")
+          span.toolbox__amount 2
