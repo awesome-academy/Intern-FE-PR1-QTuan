@@ -1,0 +1,99 @@
+.section-home {
+  margin-top: 30px;
+
+  &__banner-top {
+
+    .banner-top__slider {
+      width: 60%;
+
+      @include TabletAndMobile {
+        width: 100%;
+      }
+    }
+
+    .banner-top__right {
+      width: 40%;
+
+      @include TabletAndMobile {
+        width: 100%;
+      }
+    }
+
+    @include TabletAndMobile {
+      flex-direction: column;
+      @include centerBox();
+    }
+  }
+
+  &__newsletter {
+    @include centerBox();
+    height: 225px;
+    background-color: $title-color;
+    background-image: url(../images/newsletter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .newsletter__form {
+      width: 70%;
+      text-align: center;
+
+      h4 {
+        margin: 12px 0;
+        font-size: 2.2rem;
+        color: $text-gray;
+
+        @include Mobile() {
+          display: block;
+          margin: 12px auto;
+          width: 80%;
+          height: 34px;
+          line-height: 2rem;
+          font-size: 1.8rem;
+        }
+      }
+
+      input {
+        padding: 12px 20px;
+        height: 50px;
+        font-size: 1.6rem;
+        border-radius: 999px;
+        width: 60%;
+        outline: none;
+        box-shadow: none;
+        border:none;
+
+        @include Mobile() {
+          display: block;
+          margin: 12px auto;
+          width: 80%;
+          height: 34px;
+          font-size: 1rem;
+        }
+      }
+
+      button {
+        margin: 0 12px;
+        width: 15%;
+        height: 50px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        background-color: $primary-color;
+        color: $white-color;
+        font-size: 1.5rem;
+        border:none;
+
+        @include Mobile() {
+          display: block;
+          margin: 12px auto;
+          width: 50%;
+          height: 30px;
+          font-size: 1.2rem;
+        }
+
+        @include Tablet() {
+          width: 25%;
+        }
+      }
+    }
+  }
+}

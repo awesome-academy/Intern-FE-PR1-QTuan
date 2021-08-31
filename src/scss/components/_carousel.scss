@@ -1,0 +1,52 @@
+.section-home__brand {
+  position: relative;
+  margin-top: 60px;
+  background-color: $bg-color;
+  overflow: hidden;
+
+  .brand__list {
+    display: flex;
+    padding: 0;
+  }
+
+  .brand__item {
+    @include centerBox();
+    width: 20%;
+    height: 170px;
+
+    @include TabletAndMobile() {
+      &:first-child , &:last-child {
+        display: none;
+      }
+
+      width: 33.33%;
+    }
+
+    @include Mobile() {
+      
+      & {
+        display: none;
+      }
+
+      &:last-child {
+        @include centerBox();
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+
+  .brand__btn {
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: $text-gray;
+  }
+
+  .brand__btn-left {
+    @include position(absolute, 50%, null, null, 5%);
+  }
+
+  .brand__btn-right {
+    @include position(absolute, 50%, -95%, null, null);
+  }
+}

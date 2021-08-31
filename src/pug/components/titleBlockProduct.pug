@@ -1,0 +1,24 @@
+mixin paginationTitle()
+  .product__pagination.d-flex
+    .product__pagination--left
+      i(class="fas fa-caret-left")
+    .product__pagination--right
+      i(class="fas fa-caret-right")
+
+mixin productNameTitle()
+  .product__list-name
+    each itemProductName in proudctNameTitle
+      a(href="#" data-bs-toggle="modal" data-bs-target="#exampleModal")=itemProductName
+
+mixin titleBlockProduct(title, hasList=false)
+  .d-flex.justify-content-between.align-items-center.product__title
+    h3 
+      span(class="product__icon")
+        i(class="fas fa-border-all")
+      span=title 
+    .d-flex
+      if hasList 
+        +productNameTitle()
+        +paginationTitle()
+      else
+        +paginationTitle()

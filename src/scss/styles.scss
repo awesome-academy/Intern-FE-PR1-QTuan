@@ -3,11 +3,19 @@
 @import "base/mixins";
 @import "base/base";
 @import "base/global";
+@import "layouts/header";
+@import "layouts/footer";
 @import "components/breadcrumb";
 @import "components/button";
 @import "components/inputForm";
-@import "layouts/header";
-@import "layouts/footer";
+@import "components/itemRightBanner";
+@import "components/titleBlockProduct";
+@import "components/itemSidebar";
+@import "components/itemProduct";
+@import "components/carousel";
+@import "components/popup";
 @import "pages/login";
 @import "pages/register";
+@import "pages/home";
+
 

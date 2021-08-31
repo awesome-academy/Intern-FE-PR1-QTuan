@@ -1,0 +1,30 @@
+
+.sidebar__item {
+  height: 60px;
+  width: 100%;
+  padding: 0 12px;
+  transition: all ease .3s;
+
+  &:first-child {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+
+  &:not(:last-child) {
+    border-bottom: solid 1px $text-gray;
+  }
+
+  a {
+    font-size: 1.3rem;
+    color: $text-gray;
+
+    span {
+      margin-left: 12px;
+    }
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
