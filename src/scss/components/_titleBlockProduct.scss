@@ -11,6 +11,10 @@
       margin-right: 12px;
       color: $primary-color;
     }
+
+    @include Mobile() {
+      font-size: 1.5rem;
+    }
   }
 
   .product__pagination {

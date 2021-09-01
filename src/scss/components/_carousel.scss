@@ -50,3 +50,28 @@
     @include position(absolute, 50%, -95%, null, null);
   }
 }
+
+.img-product {
+  
+  &__show {
+    margin-bottom: 10px;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid rgba($title-color, .1);
+  }
+
+  &__slide {
+    display: flex;
+    cursor: pointer;
+
+    &--item {
+      width: calc(100% / 4);
+      border: 1px solid rgba($title-color, .1);
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+

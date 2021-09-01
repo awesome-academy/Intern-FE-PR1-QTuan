@@ -10,7 +10,7 @@ mixin banner(list)
     button(class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
       span(class="carousel-control-next-icon" aria-hidden="true")
 
-mixin itemBrand
+mixin itemBrand()
   ul(class="brand__list")
     each item in arrBrandImages
       li(class="brand__item")
@@ -20,3 +20,13 @@ mixin slideBrand()
     +itemBrand()
     i(class=" fas fa-chevron-left brand__btn-left brand__btn")
     i(class=" fas fa-chevron-right brand__btn-right brand__btn")
+
+
+mixin carouselDetailImage(list)
+  .img-product
+    .img-product__show.d-flex.justify-content-center
+      img(src='../images/product10.png' class="img-fluid")
+    .img-product__slide 
+      each item in list
+        .img-product__slide--item.d-flex.justify-content-center
+          img(src=`../images/${item.img}` alt= item.alt class="img-fluid")
