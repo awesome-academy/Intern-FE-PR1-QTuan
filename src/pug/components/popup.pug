@@ -1,0 +1,13 @@
+
+mixin popup()
+  div(class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-body.pop-up
+          form(class="pop-up__content")
+            i(class="fas fa-times")
+            h5 Đăng ký nhận tin tức của chúng tôi
+            p Nhận các tin tức khuyến mãi, ưu đãi của chúng tối hàng tuần ?
+            p Hãy đăng ký theo form dưới đây.
+            input(type="email" placeholder="Nhập email của bạn vào đây...")
+            button(type="submit") Đăng kí

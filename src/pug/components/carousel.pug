@@ -1,0 +1,22 @@
+
+mixin banner(list)
+  section(id="carouselExampleControls" class="carousel slide" data-ride="carousel")
+    .carousel-inner
+      each item, index in list 
+        div(class=`carousel-item ${index === 0 ? "active" : ""}`)
+          img(src=`../images/${item}` class="d-block w-100" alt="thanh-cong")
+    button(class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev")
+      span(class="carousel-control-prev-icon" aria-hidden="true")
+    button(class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
+      span(class="carousel-control-next-icon" aria-hidden="true")
+
+mixin itemBrand
+  ul(class="brand__list")
+    each item in arrBrandImages
+      li(class="brand__item")
+        img(src=`../images/${item}` alt="brand")
+
+mixin slideBrand()
+    +itemBrand()
+    i(class=" fas fa-chevron-left brand__btn-left brand__btn")
+    i(class=" fas fa-chevron-right brand__btn-right brand__btn")

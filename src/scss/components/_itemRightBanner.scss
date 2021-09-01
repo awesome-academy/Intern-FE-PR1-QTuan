@@ -1,0 +1,44 @@
+.item-banner {
+  height: calc(522px / 4);
+  transition: all ease .3s;
+  cursor: pointer;
+  
+  &__icon {
+    @include centerBox();
+    width: 20%;
+    font-size: 1.8rem;
+    color: $primary-color;
+    transition: all ease .3s;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    
+    h3 {
+      padding: 12px 0;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: $text-gray;
+      line-height: 2rem;
+    }
+  }
+
+  &:hover &__icon {
+    color: $white-color;
+  }
+
+  &:hover p {
+    color: $white-color;
+  }
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}

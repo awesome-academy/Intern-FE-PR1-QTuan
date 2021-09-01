@@ -1,0 +1,33 @@
+mixin rating(rates)
+  - for (var i = 1; i <= 5; i++)
+      i(class=`${i > rates ? "far fa-star" : "fas fa-star"}`)
+
+mixin itemProduct(img, alt, name, price, star, amoutCommet)
+  .card.product-item
+    img(src=`./images/${img}` alt=alt)
+    .product-item__overlay
+    .product-item__btn
+      a(href="product-detail.html") Mua ngay
+    .card-body.product-item__content
+      p(class="content__price")=price
+      h5(class="content__name")=name
+      p(class="content__comment")
+        span 
+          +rating(star) 
+        span(class="content__comment--text")=`(${amoutCommet} đánh giá)`
+
+mixin horizontalProduct(img, alt, name, price, star, amoutCommet, detail)
+  .horizontal-product.row
+    .col-md-4.d-flex.justify-content-center
+      img(src=img, alt=alt, class="img-fluid")
+    .col-md-8.product-item__content.text-center
+      h5(class="content__name")= name
+      p(class="content__comment")
+        span 
+          +rating(star) 
+        span(class="content__comment--text")=`(${amoutCommet} đánh giá)`
+      p(class="content__detail")= detail
+      p(class="content__price")= price
+      .content__btn.d-flex.justify-content-center
+        a(href="" class="content__btn--buy") Mua ngay
+        a(href="" class="content__btn--see") Xem chi tiết

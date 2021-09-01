@@ -1,0 +1,9 @@
+mixin itemRightBanner()
+  each item in listBannerContent 
+    .d-flex.item-banner
+      .item-banner__icon
+        i(class=item.icon)
+      .item-banner__content
+        .item-banner__content--main
+          h3=item.title 
+          p=item.content

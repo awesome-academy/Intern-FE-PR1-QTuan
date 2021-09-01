@@ -6,3 +6,57 @@ block vars
 	-des=''
 
 block content
+	section(class="section-home")
+		.container
+			section(class="section-home__banner-top d-flex")
+				.banner-top__slider
+					+banner(arrBanners)
+				.banner-top__right
+					+itemRightBanner()
+			section(class="section-home__hot-product row")
+				+titleBlockProduct("Sản phẩm nổi bật")
+				section(class="hot-product__sidebar col-lg-3")
+					ul
+						each item in listItemSidebar
+							+itemSidebar(item)
+				section(class="col-lg-9")
+					.row
+						each item in listHotProduct
+							.col-xl-3.col-md-4.col-6.p-3
+								+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)
+			section(class="section-home__new-product row")
+				+titleBlockProduct("Sản phẩm mới", true)
+				.row
+					each item in listNewProduct
+						.col-lg-3.col-6.p-3
+							+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)
+				.row
+					.col-lg-6.py-3.d-flex.justify-content-center
+						img(src="../images/banner1.png", alt="sale-off", class="img-fluid")
+					.col-lg-6.py-3.d-flex.justify-content-center
+						img(src="../images/banner2.png", alt="sale-off", class="img-fluid")
+			section(class="section-home__sales-product row")
+				+titleBlockProduct("Sản phẩm bán chạy", true)
+				.row
+					each item in listHotProduct
+						.col-xl-3.col-md-4.col-6.p-3
+							+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)
+				.d-flex.justify-content-center.mt-5
+					img(src="../images/banner3.png", alt="sale-off", class="img-fluid")
+			section(class="section-home__arrivals-product row")
+				+titleBlockProduct("Hàng mới về")
+				.row
+					each item in listArrivalProduct
+						.col-lg-6.col-12.px-5.py-3
+							+horizontalProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent, item.detail)
+		section(class="section-home__brand")
+			.container
+				.row
+					+slideBrand()
+		section(class="section-home__newsletter")
+			form(class="newsletter__form")
+				h4 Đăng ký để nhận khuyến mãi hàng tuần
+				input(type="email")
+				button(type="submit" ) Đăng kí
+		section(class="pop-up")
+			+popup()
