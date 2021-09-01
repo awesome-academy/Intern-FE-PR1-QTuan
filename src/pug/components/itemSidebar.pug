@@ -1,5 +1,15 @@
-mixin itemSidebar(content)
+mixin itemSidebar(content, className = "fas fa-border-all")
   li(class="sidebar__item d-flex align-items-center")
     a
-      i(class="fas fa-border-all")
+      i(class=className)
       span=content
+
+mixin itemSaleProduct(img, alt, price, name)
+  li(class="sidebar__item-sale d-flex align-items-center")
+    .row 
+      .col-4 
+        img(class="img-fluid" alt=alt src=`../images/${img}`)
+      .col-8.item-sale__content.d-flex.align-items-center
+        div
+          h3=name 
+          p=price 

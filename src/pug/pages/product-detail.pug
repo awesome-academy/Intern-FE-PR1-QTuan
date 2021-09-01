@@ -1,0 +1,79 @@
+extends ../layouts/default-layout
+
+block vars 
+	-title = 'Máy khoan CNC 3D'
+	-bodyClass = 'ProductDetail'
+	-des=""
+
+block content 
+	section(class="section-product-detail")
+		.container
+			+breadcrumb("Trang chủ","Máy khoan CNC 3D")
+			.row
+				section(class="product-detail__sidebar col-lg-3 d-none d-lg-block")
+					ul
+						+itemSidebar("Danh mục sản phẩm","fas fa-bars")
+						each item in listItemSidebar
+							+itemSidebar(item)
+					ul(class='mt-5')
+						+itemSidebar("Sản phẩm khuyến mãi","fas fa-gift")
+						each item in listSaleProducts
+							+itemSaleProduct(item.img, item.alt, item.price, item.name)
+				section(class="product-detail__main col-lg-9")
+					section(class="main__product")
+						.row
+							.col-md-5.col-12
+								+carouselDetailImage(listImgProductDetails)
+							.col-md-7.col-12
+								.main__product-content 
+									h1 Máy khoan CNC 3D
+									.d-sm-flex
+										.product-content__rate
+											span 
+												+rating(4) 
+											span(class="rate__amount") 12 (đánh giá)
+										p.product-content__send Gửi bình luận của bạn
+									p.product-content__price GNĐ: 2.350.000đ
+								.main__product-info 
+									h3 Thông tin sản phẩm: 
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nulla molestiae, quidem deleniti temporibus eos id quod libero eaque labore numquam ad est ullam quibusdam. Ducimus voluptatem quo illo officiis.
+								.main__product-option.d-flex.justify-content-around
+									.select-input-option
+										label Size:
+										select
+											option --Chọn size--
+											option 1
+											option 2
+											option 3
+									.select-input-option
+										label Màu sắc:
+										select
+											option --Chọn màu--
+											option Màu Trắng
+											option Màu Đen
+								.main__product-amount.d-flex
+									.product-amount__input
+										input(value="1" type="number")
+									.proudct-amount__btn
+										a(href="cart.html") Mua ngay
+								.main__product-social
+									img(src="../images/social.png", alt="social", class="img-fluid mt-5")
+						.row 
+							.col-lg-12.product-detail__info 
+								.info__title.d-flex
+									h4 Thông tin sản phẩm
+									h4 Đánh giá nhận xét 
+									h4 Thẻ Tags
+								.info__content 
+									p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam provident velit tempora vitae doloribus perspiciatis nostrum rerum corrupti. Porro, minus veritatis non vitae repudiandae eius ipsa suscipit est asperiores nemo!
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Non praesentium alias tempora deserunt obcaecati velit ducimus, magnam dolorem fugit totam iure, doloremque iusto eveniet blanditiis, ut quod quis expedita temporibus.
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt odit, quia commodi labore cumque cum quisquam maiores. Facilis, illo quisquam soluta ipsam, placeat officiis mollitia, consectetur molestiae veniam modi totam!
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia suscipit cum provident, impedit laborum, amet maxime itaque omnis sed vitae, minus ea nobis. Labore, velit. Odio inventore ullam quidem fugiat.
+									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia suscipit cum provident, impedit laborum, amet maxime itaque omnis sed vitae, minus ea nobis. Labore, velit. Odio inventore ullam quidem fugiat.
+						.row 
+							.col-lg-12.product-detail__recommend 
+								+titleBlockProduct("Sản phẩm tương tự")
+								.row
+									each item in listNewProduct
+										.col-lg-3.col-6.p-2
+											+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)

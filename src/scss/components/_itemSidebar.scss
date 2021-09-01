@@ -28,3 +28,31 @@
     color: $primary-color;
   }
 }
+
+
+.sidebar__item-sale {
+  padding: 20px 12px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: solid 1px $text-gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .item-sale__content {
+    
+    h3 {
+      padding: 12px 0px;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      color: $title-color;
+      font-weight: bold;
+    }
+
+    p {
+      color: $red-color;
+      font-size: 1.4rem;
+    }
+  }
+}
