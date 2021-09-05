@@ -19,16 +19,17 @@
     @include position(absolute, null, 0, 50%, 0);
     text-align: center;
     opacity: 0;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     transition: ease-in-out 0.3s;
 
     a {
-      padding: 12px 20px;
+      padding: 12px;
+      margin-right: 12px;
       font-size: 1.6rem;
       background: $primary-color;
       color: $white-color;
       transition: all ease-in-out 0.3s;
-      border-radius: 10px;
+      border-radius: 999px;
       
 
       &:hover {
@@ -37,6 +38,12 @@
 
       @include Mobile() {
         padding: 12px 12px;
+      }
+    }
+
+    .btn__detail {
+      @include Mobile() {
+        display: none
       }
     }
   }
@@ -64,7 +71,7 @@
     }
 
     .content__comment {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       color: $primary-color;
       
       &--text {
@@ -104,8 +111,12 @@
   cursor: pointer;
   transition: all ease .3s;
 
+  &__img {
+    max-height: 280px;
+  }
+
   &:hover {
-    box-shadow: 2px 2px rgba($secondary-color,.1);
+    box-shadow: 0 3px 10px rgba($secondary-color,.1);
   }
 
   .product-item__content {

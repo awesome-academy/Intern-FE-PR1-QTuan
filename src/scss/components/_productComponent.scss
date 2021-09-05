@@ -1,0 +1,111 @@
+.product-page__sidebar {
+  padding-top: 10px;
+
+  .sidebar__item:first-child {
+    text-transform: uppercase;
+  }
+
+  ul {
+    box-shadow: 0 3px 10px rgba($title-color, .2);
+  } 
+}
+
+.product-page__heading {
+  padding:12px 0px 22px 0px;
+  border-bottom: 1px solid $text-gray;
+
+  @include TabletAndMobile {
+    margin-top: 24px;
+  }
+
+  @include Mobile {
+    flex-direction: column;
+  }
+
+  .heading__filter {
+    .option-filter {
+      margin-right: 30px;
+      font-size: 1.4rem;
+
+      label {
+        margin: 0px 12px 8px 0px;
+
+        @include Mobile() {
+          margin: 0px;
+        }
+      }
+
+      select {
+        padding: 8px 12px;
+      }
+
+      option {
+        color: $text-gray;
+      }
+
+      @include Mobile() {
+        margin-right: 0px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @include Mobile() {
+      justify-content: space-between;
+    }
+  }
+
+  .heading__toolbox {
+     button {
+      color: $text-color;
+      margin-left: 16px;
+      border: 1px solid $text-gray;
+      background-color: $white-color;
+      border-radius: 2px;
+
+      i {
+        padding: 8px;
+        font-size: 1.6rem;
+      }
+
+      &.active {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+
+    @include Mobile() {
+      margin-top: 12px;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.product-page__pagination {
+  margin-top: 34px;
+  padding: 0;
+
+  .pagination__list {
+    padding: 0;
+
+    .pagination__item {
+      margin: 0px 4px;
+      padding: 12px 14px;
+      border: 1px solid $primary-color;
+      font-size: 1.4rem;
+      color: $text-gray;
+      cursor: pointer;
+      transition: all ease .3s;
+      
+      &:nth-child(2),
+      &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+
+      @include Mobile() {
+        padding: 6px 8px;
+        font-size: 1.3;
+      }
+    }
+  }
+}

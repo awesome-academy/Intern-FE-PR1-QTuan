@@ -1,0 +1,50 @@
+mixin sidebarProduct()
+	.product-page__sidebar
+		ul
+			+itemSidebar("Danh mục sản phẩm","fas fa-bars")
+			each item in listItemSidebar
+				+itemSidebar(item)
+		ul(class="mt-5")
+			+itemSidebar("Tìm theo mức giá","fas fa-search-dollar")
+			each item in listPriceFilters
+				+itemSidebar(item)
+		ul(class="mt-5")
+			+itemSidebar("Tìm theo màu sắc","fas fa-search-dollar")
+			each item in listColorFilters
+				+itemColorFilter(item.color,item.style)
+		ul(class='mt-5')
+			+itemSidebar("Sản phẩm khuyến mãi","fas fa-gift")
+			each item in listSaleProducts
+				+itemSaleProduct(item.img, item.alt, item.price, item.name)
+
+
+mixin headingProduct()
+	.product-page__heading.d-flex.justify-content-between
+		.heading__filter.d-flex
+			.option-filter
+				label(for="sort") Sắp xếp theo:
+				select(id="sort")
+					option(value="name") Tên sản phẩm
+					option(value="price") Giá sản phẩm
+					option(value="made-in") Xuất xứ
+			.option-filter
+				label(for="filter") Show:
+				select(id="filter")
+					option(value="18") 18
+					option(value="20") 20
+					option(value="34") 34
+		ul(class="nav nav-pills heading__toolbox d-flex" id="pills-tab" role="tablist")
+			li(class="toolbox__list toolbox" role="presentation")
+				button(class="" id="pills-grid-tab" data-bs-toggle="pill" data-bs-target="#pills-grid" type="button" role="tab" aria-controls="pills-grid" aria-selected="true")
+					i(class="fas fa-th")
+			li(class="toolbox__list toolbox" role="presentation")
+				button(class="" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="false")
+					i(class="fas fa-th-list")
+			
+
+
+mixin paginationProduct()
+	.product-page__pagination.d-flex.flex-row-reverse
+		ul(class="pagination__list d-flex")
+			each item in paginationList
+				li(class="pagination__item")=item

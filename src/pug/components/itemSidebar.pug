@@ -1,6 +1,6 @@
 mixin itemSidebar(content, className = "fas fa-border-all")
   li(class="sidebar__item d-flex align-items-center")
-    a
+    .item__content
       i(class=className)
       span=content
 
@@ -13,3 +13,10 @@ mixin itemSaleProduct(img, alt, price, name)
         div
           h3=name 
           p=price 
+
+mixin itemColorFilter(content, style)
+  li(class="sidebar__item-color d-flex align-items-center")
+    .d-flex
+      div(class=`item-color__box item-color__box--${style}`)
+      .d-flex.align-items-center
+        p(class="item-color__content")= content

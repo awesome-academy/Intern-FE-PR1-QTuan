@@ -8,10 +8,6 @@
       text-transform: uppercase;
     }
 
-    .sidebar__item:last-child {
-      box-shadow: 0px 3px rgba($title-color, 0.125);
-    }
-
     ul {
       box-shadow: 0 3px 10px rgba($title-color, .2);
     }
@@ -93,7 +89,7 @@
       padding: 20px 0;
       border-bottom: 1px solid rgba($title-color, .1);
 
-      .select-input-option {
+      .option-filter {
         margin-right: 30px;
         font-size: 1.6rem;
 

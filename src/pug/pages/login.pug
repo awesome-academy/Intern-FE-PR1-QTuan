@@ -8,7 +8,7 @@ block vars
 block content
 	section(class="section-login")
 		.container 
-			+breadcrumb("Trang chủ","Đăng nhập")
+			+breadcrumb({content:"Trang chủ"}, {content:"Đăng nhập",link:"login.html"})
 			form(class="login-form")
 				.row 
 					div(class="col-lg-6")

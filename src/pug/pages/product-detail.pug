@@ -8,7 +8,7 @@ block vars
 block content 
 	section(class="section-product-detail")
 		.container
-			+breadcrumb("Trang chủ","Máy khoan CNC 3D")
+			+breadcrumb({content:"Trang chủ"}, {content:"Máy khoan 3D CNC",link:"product-detail.html"})
 			.row
 				section(class="product-detail__sidebar col-lg-3 d-none d-lg-block")
 					ul
@@ -38,14 +38,14 @@ block content
 									h3 Thông tin sản phẩm: 
 									p Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae nulla molestiae, quidem deleniti temporibus eos id quod libero eaque labore numquam ad est ullam quibusdam. Ducimus voluptatem quo illo officiis.
 								.main__product-option.d-flex.justify-content-around
-									.select-input-option
+									.option-filter
 										label Size:
 										select
 											option --Chọn size--
 											option 1
 											option 2
 											option 3
-									.select-input-option
+									.option-filter
 										label Màu sắc:
 										select
 											option --Chọn màu--
