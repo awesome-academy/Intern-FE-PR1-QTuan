@@ -6,8 +6,10 @@ mixin itemProduct(img, alt, name, price, star, amoutCommet)
   .card.product-item
     img(src=`./images/${img}` alt=alt)
     .product-item__overlay
-    .product-item__btn
+    .product-item__btn.d-flex.justify-content-center
       a(href="product-detail.html") Mua ngay
+      a(href="#" class="btn__detail")
+        i(class="fas fa-list-ul") 
     .card-body.product-item__content
       p(class="content__price")=price
       h5(class="content__name")=name
@@ -19,7 +21,7 @@ mixin itemProduct(img, alt, name, price, star, amoutCommet)
 mixin horizontalProduct(img, alt, name, price, star, amoutCommet, detail)
   .horizontal-product.row
     .col-md-4.d-flex.justify-content-center
-      img(src=img, alt=alt, class="img-fluid")
+      img(src=img, alt=alt, class="img-fluid horizontal-product__img")
     .col-md-8.product-item__content.text-center
       h5(class="content__name")= name
       p(class="content__comment")

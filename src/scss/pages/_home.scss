@@ -25,6 +25,13 @@
     }
   }
 
+  .hot-product__sidebar {
+    
+    ul {
+      box-shadow: 0 3px 10px rgba($title-color, .2);
+    }
+  }
+
   &__newsletter {
     @include centerBox();
     height: 225px;

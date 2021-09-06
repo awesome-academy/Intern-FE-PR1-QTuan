@@ -1,0 +1,29 @@
+extends ../layouts/default-layout
+
+block vars
+	-title = 'Sản phẩm'
+	-bodyClass = 'productGrid'
+	-des=''
+
+block content 
+	section(class="section-product ")
+		.container.section-product-grid
+			+breadcrumb({content:"Trang chủ"}, {content:"Danh mục sản phẩm",link:"product-grid.html"})
+			.row
+				.col-lg-3.d-none.d-lg-block
+					+sidebarProduct()
+				.col-lg-9
+					+headingProduct()
+					.tab-content#pills-tabContent
+						.tab-pane.fade.show.active(id="pills-grid" role="tabpanel" aria-labelledby="pills-grid-tab")
+							.row.mt-5
+								each item in arrProductGrid
+									.col-xl-3.col-md-4.col-6.p-2
+										+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent, item.detail)
+						.tab-pane.fade(id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab")
+							.row.mt-5
+								each item in arrProductList
+									.col-xl-6.col-12.px-5.py-3
+										+horizontalProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent, item.detail)
+			.row 
+				+paginationProduct()
