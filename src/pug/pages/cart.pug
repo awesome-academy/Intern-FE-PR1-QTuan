@@ -1,0 +1,48 @@
+extends ../layouts/default-layout
+
+block vars 
+  -title = "Giỏ hàng"
+  -bodyClass = "CartPage"
+  -des = ''
+
+block content 
+  section(class="section-cart")
+    .container 
+      +breadcrumb({content:"Trang chủ"}, {content:"Giỏ hàng",link:"cart.html"})
+      .section-cart__main 
+        table.table.main__cart-table
+          thead 
+            tr 
+              each item in listTitleTable 
+                th(class="cart-title__item" scope='col')=item
+          tbody 
+            each item in itemCarts
+              tr.main__cart-list
+                th(scope='row')=item.index
+                td
+                  img(class="img-fluid cart-item__img" src=item.img alt=item.alt)
+                td
+                  h4.cart-item__name=item.name
+                td
+                  span.cart-item__price=item.price
+                td
+                  span.cart-item__amount=item.amount
+                td
+                  span.cart-item__total=item.total
+                td
+                  i.fas.fa-times
+      .row
+        .cart__payment.d-flex.justify-content-end
+          .payment-title.d-flex.justify-content-end.flex-column
+              span Tổng tiền:
+              span thuế (vat):
+              span thanh toán:
+          .payment-content.d-flex.justify-content-end.flex-column
+              span 6.850.000 Đ
+              span 6.850.000 Đ
+              span.payment-content--total 7.520.000 Đ
+        .payment__btn.d-flex.justify-content-end
+          .btn-shopping
+            +btn("Tiếp tục mua hàng")
+          .btn-order
+            +btn("Thanh toán")
