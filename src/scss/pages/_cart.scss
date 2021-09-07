@@ -1,0 +1,139 @@
+.section-cart {
+  padding: 30px 0;
+  margin-bottom: 60px;
+
+  .nav__breadcrumb {
+    margin-bottom: 20px;
+  }
+
+  .section-cart__main {
+    width: 100%;
+    padding-top: 40px;
+    border-top: 1px solid $border-color;
+
+    @include Mobile() {
+      overflow-x: scroll;
+    }
+
+    .main__cart-table {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      color: $text-color;
+      
+      @include Tablet() {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      @include Mobile() {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+
+      thead {
+        tr {
+          border: 1px solid $border-color;
+
+          th {
+            padding: 20px 12px;
+            vertical-align: middle;
+            border-left: 1px solid $border-color;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+
+          th {
+            border: 1px solid $border-color;
+            vertical-align: middle;
+          }
+
+          td {
+            border: 1px solid $border-color;
+            vertical-align: middle;
+          }
+
+          .cart-item__amount {
+            padding: 10px;
+            border: 1px solid $border-color;
+          }
+
+          i {
+            color: $red-color;
+            cursor: pointer;
+          }
+
+          .cart-item__img {
+            min-width: 140px;
+          }
+
+          .cart-item__name {
+            min-width: 120px;
+          }
+        }
+      }
+    }
+  }
+
+  .cart__payment {
+    margin-top: 35px;
+    @include Mobile() {
+      margin-top: 12px;
+    }
+
+    .payment-title,
+    .payment-content {
+      span {
+        @include size(250px, 50px);
+        border: 1px solid $border-color;
+        padding-right: 20px;
+        text-transform: uppercase;
+        text-align: right;
+        font-weight: bold;
+        line-height: 50px;
+        font-size: 1.3rem;
+
+        @include Mobile() {
+          @include size(130px,40px);
+          line-height: 40px;
+        }
+      }
+    }
+
+    .payment-content--total {
+      font-size: 1.7rem !important;
+      color: $red-color;
+    }
+  }
+
+  .payment__btn {
+    margin-top: 34px;
+    a {
+      font-size: 1.4rem;
+      padding: 16px 20px;
+    }
+
+    .btn-order {
+      margin-left: 20px;
+      
+      a {
+        background-color: $primary-color;
+
+        &:hover {
+          background-color: rgba($primary-color, .8);
+        }
+      }
+    }
+
+    @include Mobile() {
+      a {
+        font-family: 1.3rem;
+        padding: 12px 14px;
+      }
+    }
+  }
+}
