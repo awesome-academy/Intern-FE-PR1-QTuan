@@ -1,0 +1,5 @@
+mixin paginationProduct()
+	.component__pagination.d-flex.flex-row-reverse
+		ul(class="pagination__list d-flex")
+			each item in paginationList
+				li(class="pagination__item")=item

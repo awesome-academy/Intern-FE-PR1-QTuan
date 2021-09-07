@@ -40,11 +40,3 @@ mixin headingProduct()
 			li(class="toolbox__list toolbox" role="presentation")
 				button(class="" id="pills-list-tab" data-bs-toggle="pill" data-bs-target="#pills-list" type="button" role="tab" aria-controls="pills-list" aria-selected="false")
 					i(class="fas fa-th-list")
-			
-
-
-mixin paginationProduct()
-	.product-page__pagination.d-flex.flex-row-reverse
-		ul(class="pagination__list d-flex")
-			each item in paginationList
-				li(class="pagination__item")=item

@@ -1,0 +1,29 @@
+.component__pagination {
+  margin-top: 34px;
+  padding: 0;
+
+  .pagination__list {
+    padding: 0;
+
+    .pagination__item {
+      margin: 0px 4px;
+      padding: 12px 14px;
+      border: 1px solid $primary-color;
+      font-size: 1.4rem;
+      color: $text-gray;
+      cursor: pointer;
+      transition: all ease .3s;
+      
+      &:nth-child(2),
+      &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+
+      @include Mobile() {
+        padding: 6px 8px;
+        font-size: 1.3;
+      }
+    }
+  }
+}
