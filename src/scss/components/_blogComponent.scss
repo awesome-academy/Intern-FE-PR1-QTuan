@@ -1,0 +1,136 @@
+.blog__sidebar {
+  padding-top: 10px;
+
+  .sidebar__item:first-child {
+    text-transform: uppercase;
+  }
+
+  .list-box-shadow {
+    box-shadow: 0 3px 10px rgba($title-color, .2);
+  } 
+
+  .siderbar__bg-none {
+    .sidebar__item:first-child {
+      text-transform: uppercase;
+      background: none;
+      font-weight: bold;
+      color: $text-color;
+      border-color: $primary-color;
+
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .border-none {
+    .sidebar__item {
+      border: none;
+      padding-left: 0px;
+    }
+  }
+
+  .sidebar__img {
+    img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+
+  .sidebar__tags {
+    span {
+      margin: 6px 8px 0 0;
+      padding: 8px 10px;
+      border: 1px solid $text-color;
+      font-style: italic;
+      font-size: 1.2rem;
+      transition: all ease .3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.blog-list {
+  padding-top: 10px;
+
+  .blog-item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .block__main {
+      h2 {
+        margin: 18px 0px;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $text-color;
+        line-height: 2rem;
+
+        @include Mobile() {
+          margin: 12px 0px;
+        }
+      }
+  
+      .block__info {
+        margin-bottom: 20px;
+  
+        .info__date,
+        .info__author,
+        .info__comment {
+          margin-right: 16px;
+          font-size: 1.3rem;
+          color: $text-gray;
+          font-style: italic;
+          cursor: pointer;
+
+          p {
+            margin-right: 4px;
+          }
+          
+          @include Mobile {
+            margin-top: 8px;
+          }
+
+          i {
+            margin-right: 4px;
+            font-size: 1.2rem;
+          }
+        }
+  
+        .info__author--name {
+          color: $primary-color;
+        }
+
+        @include Mobile() {
+          margin-bottom: 12px;
+        }
+      }
+  
+      .block__content {
+        font-size: 1.3rem;
+        color: $text-gray;
+        line-height: 1.6rem;
+
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }  
+}

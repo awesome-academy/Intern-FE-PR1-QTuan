@@ -20,3 +20,8 @@ mixin itemColorFilter(content, style)
       div(class=`item-color__box item-color__box--${style}`)
       .d-flex.align-items-center
         p(class="item-color__content")= content
+
+mixin itemSidebarNews(content)
+  li(class="sidebar__item-news d-flex align-items-center")
+    .item__content
+      span=content

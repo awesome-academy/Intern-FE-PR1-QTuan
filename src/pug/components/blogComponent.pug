@@ -1,0 +1,42 @@
+mixin sidebarBlog()
+	.blog__sidebar
+		ul(class="list-box-shadow")
+			+itemSidebar("Danh mục sản phẩm","fas fa-bars")
+			each item in listItemSidebar
+				+itemSidebar(item)
+		ul(class="mt-5 siderbar__bg-none")
+			+itemSidebar("Danh mục tin tức","fas fa-border-all")
+			each item in siderbarNews
+				+itemSidebar(item)
+		ul(class="mt-5 siderbar__bg-none border-none")
+			+itemSidebar("Thư viện hình ảnh","fas fa-border-all")
+			.row.sidebar__img
+				each item in siderbarLbImg
+					.col-lg-4.py-3
+						img(src=`../images/${item}` alt="thu-vien-anh")
+		ul(class="mt-5 siderbar__bg-none border-none")
+			+itemSidebar("Thẻ tags","fas fa-border-all")
+			.sidebar__tags.d-flex.flex-wrap
+				each item in siderbarTags
+					span= item
+
+mixin listBlog()
+	.blog-list 
+		each item in listBlogs
+			.blog-item
+				.block-item__img
+					img(src=`../images/${item.img}` alt=item.alt)
+				.block__main
+					h2=item.title
+					.block__info.d-flex.flex-wrap 
+						p.info__date= item.date 
+						.info__author.d-flex
+							i(class="fas fa-user")
+							p Đăng bởi 
+							p.info__author--name= item.author
+						.info__comment.d-flex
+							i(class="fas fa-comment-dots")
+							p=item.totalComment
+							p  Bình luận
+					p.block__content= item.content 
+						a(href="blog-detail.html") [Đọc tiếp]
