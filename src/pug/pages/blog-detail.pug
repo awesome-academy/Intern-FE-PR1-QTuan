@@ -1,0 +1,45 @@
+extends ../layouts/default-layout
+
+block vars
+	-title = 'Tin tức'
+	-bodyClass = 'blogDetail'
+	-des=''
+
+block content 
+	section(class="blog-detail")
+		.container 
+			+breadcrumb({content:"Trang chủ"}, {content:"Tin tức",link:"blog.html"})
+			.row 
+				.col-lg-3.d-none.d-lg-block
+					+sidebarBlog()
+				.col-lg-9
+					.row
+						+blogDetail()
+					.blog-detail__sharing.d-flex.justify-content-between.flex-wrap
+						.detail__tags.d-flex.align-items-center
+							h3 Tags: 
+							each tag in detailTags 
+								a(href="#")=`${tag},`
+						.detail__socials.d-flex.align-items-center
+							h3 Chia sẻ: 
+							each icon in arrIcons
+								i(class=icon)
+					.blog-detail__comment
+						h3 Bình luận:
+						.detail__comment
+							each item in listComments
+								+blogComment(item.img, item.name, item.date, item.content)
+					.blog-detail__write-comment
+						h3 Viết bình luận của bạn: 
+						form.comment-form
+							.row
+								+inputForm("name","Họ và tên: ", "text", true)
+								+inputForm("email","Email: ", "text", true)
+							.row 
+								.col-12
+									div(class="input-label")
+											label(for='comment') Bình luận:
+									textarea(class="form-control text-comment" type='text' id='comment' name='comment' rows="5")
+							.row 
+								.comment-form__btn 
+									+btn("Gửi bình luận")

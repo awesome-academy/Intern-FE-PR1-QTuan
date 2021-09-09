@@ -38,5 +38,40 @@ mixin listBlog()
 							i(class="fas fa-comment-dots")
 							p=item.totalComment
 							p  Bình luận
-					p.block__content= item.content 
+					p.block__content= `${item.content}...`
 						a(href="blog-detail.html") [Đọc tiếp]
+
+mixin blogDetail(isDetail=false)
+	.section-detail 
+		each item in blogDetail
+			.blog-item
+				.block-item__img
+					img(src=`../images/${item.img}` alt=item.alt)
+				.block__main
+					h2=item.title
+					.block__info.d-flex.flex-wrap 
+						p.info__date= item.date 
+						.info__author.d-flex
+							i(class="fas fa-user")
+							p Đăng bởi 
+							p.info__author--name= item.author
+						.info__comment.d-flex
+							i(class="fas fa-comment-dots")
+							p=item.totalComment
+							p  Bình luận
+					.block-detail__content
+						p.block__content= item.content
+						img(src=`../images/${item.img1}` alt =item.alt)
+						p.block__content= item.content2
+						img(src=`../images/${item.img2}` alt= item.alt)
+						p.block__content= item.content4
+
+mixin blogComment(img, name, date, content)
+	.comment__item.d-flex
+		img(src=`../images/${img}` alt='tuan-day')
+		.comment__main
+			p.main__name= name
+			.main__date.d-flex.justify-content-between
+				p= date
+				span Trả lời 
+			p.main__content= content
