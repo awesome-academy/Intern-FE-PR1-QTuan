@@ -24,7 +24,7 @@ block content
 						each item in listHotProduct
 							.col-xl-3.col-md-4.col-6.p-3
 								+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)
-			section(class="section-home__new-product row")
+			section(class="section-home__new-product")
 				+titleBlockProduct("Sản phẩm mới", true)
 				.row
 					each item in listNewProduct
@@ -35,7 +35,7 @@ block content
 						img(src="../images/banner1.png", alt="sale-off", class="img-fluid")
 					.col-lg-6.py-3.d-flex.justify-content-center
 						img(src="../images/banner2.png", alt="sale-off", class="img-fluid")
-			section(class="section-home__sales-product row")
+			section(class="section-home__sales-product")
 				+titleBlockProduct("Sản phẩm bán chạy", true)
 				.row
 					each item in listHotProduct
@@ -43,7 +43,7 @@ block content
 							+itemProduct(item.img, item.alt, item.name, item.price, item.star, item.amoutComent)
 				.d-flex.justify-content-center.mt-5
 					img(src="../images/banner3.png", alt="sale-off", class="img-fluid")
-			section(class="section-home__arrivals-product row")
+			section(class="section-home__arrivals-product")
 				+titleBlockProduct("Hàng mới về")
 				.row
 					each item in listArrivalProduct

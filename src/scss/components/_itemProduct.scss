@@ -4,6 +4,8 @@
 
   img {
     @include position(relative);
+    width: 100%;
+    max-width: 250px;
   }
 
   &:hover .product-item__btn {
