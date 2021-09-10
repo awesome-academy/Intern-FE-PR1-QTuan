@@ -88,8 +88,6 @@
       }
   
       .block__info {
-        margin-bottom: 20px;
-  
         .info__date,
         .info__author,
         .info__comment {
@@ -116,13 +114,10 @@
         .info__author--name {
           color: $primary-color;
         }
-
-        @include Mobile() {
-          margin-bottom: 12px;
-        }
       }
   
       .block__content {
+        margin-top: 20px;
         font-size: 1.3rem;
         color: $text-gray;
         line-height: 1.6rem;
@@ -130,7 +125,76 @@
         a {
           color: $primary-color;
         }
+
+        @include Mobile() {
+          margin-bottom: 12px;
+        }
       }
     }
   }  
+}
+
+.section-detail {
+  @extend .blog-list;
+
+  .block-detail__content {
+    img {
+      width: 70%;
+      margin: 20px auto;
+      display: block;
+    }
+  }
+}
+
+.comment__item {
+  margin-bottom: 30px;
+
+  img {
+    @include size(80px);
+    border: 2px solid $border-color;
+    padding: 3px;
+  }
+
+  .comment__main {
+    margin: 6px 0px 6px 18px;
+    width: 100%;
+
+    @include Mobile() {
+      margin: 0px 0px 0px 6px;
+    }
+
+    .main__name {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      color: $text-color;
+      font-weight: bold;
+    }
+
+    .main__date {
+      margin: 10px 0px;
+      font-size: 1.4rem;
+      font-style: italic;
+
+      p {
+        color: $text-gray;
+      }
+
+      span {
+        color: $primary-color;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      @include Mobile() {
+        font-size: 1.1rem;
+        margin: 6px 0px;
+      }
+    }
+
+    .main__content {
+      font-size: 1.2rem;
+      color: $text-gray;
+      line-height: 1.6rem;
+    }
+  }
 }
