@@ -4,7 +4,8 @@ mixin rating(rates)
 
 mixin itemProduct(img, alt, name, price, star, amoutCommet)
   .card.product-item
-    img(src=`./images/${img}` alt=alt)
+    .product-item__img.d-flex.justify-content-center.align-items-center
+      img(src=`./images/${img}` alt=alt)
     .product-item__overlay
     .product-item__btn.d-flex.justify-content-center
       a(href="product-detail.html") Mua ngay

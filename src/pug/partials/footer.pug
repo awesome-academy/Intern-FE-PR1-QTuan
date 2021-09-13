@@ -14,11 +14,10 @@ footer(id="footer")
         div(class="col-lg-6 bottom-footer__block")
           p Giải đáp nhanh:
           .row 
-            +contactItem(
-              "fas fa-phone",
-              "Tư vấn miễn phí (24/7)",
-              "1900 650 650")
-            +contactItem(
-              "fas fa-comment",
-              "Góp ý-phản hồi-thắc mắc",
-              "1900 650 650")
+            each item in listContact 
+              .col-lg-6.d-flex.align-items-center.justify-content-center.my-5
+                .contact__icon
+                  i(class=item.className)
+                .contact__content
+                  p= item.content 
+                  span= item.phone
